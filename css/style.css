@@ -4,4 +4,10 @@
 body
 {
 	background:#f6f6f6;
+	font-family:kulturista_medium;
+}
+
+@font-face {
+	font-family: kulturista_medium;
+	src: url('../assets/fonts/Kulturista_Medium.otf');
 }
