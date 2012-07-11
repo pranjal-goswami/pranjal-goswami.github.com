@@ -444,9 +444,9 @@ h5,
 h6 {
   margin: 0;
   font-family: inherit;
-  font-weight: bold;
+  //font-weight: bold;
   color: inherit;
-  text-rendering: optimizelegibility;
+  //text-rendering: optimizelegibility;
 }
 
 h1 small,
