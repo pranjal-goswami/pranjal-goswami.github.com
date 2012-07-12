@@ -4,7 +4,8 @@
 body
 {
 	
-	font-family:kulturista_medium;
+	font-family:'kulturista-web',serif;
+	font-weight:normal;
 	width:100%;
 	margin:auto;
 	display:block;
@@ -19,14 +20,6 @@ user-select: none;
 */
 }
 
-@font-face {
-	font-family: kulturista_medium;
-	src: url('../assets/fonts/Kulturista_Medium.otf');
-}
-@font-face {
-	font-family: kulturista_light;
-	src: url('../assets/fonts/Kulturista_Light.otf');
-}
 #wrapper
 {
 	margin:auto;
@@ -67,8 +60,7 @@ user-select: none;
 }
 p
 {
-	font-family:'kulturista_light';
-	font-size:14px;
+font-size:14px;
 }
 #navigation_list li{
 	font-size:20px;
@@ -91,18 +83,20 @@ p
 .heading
 {
 	//color:#7d7d7d;
-	font-size:16px;
+	//font-size:20px;
+	font-weight:400;
+	//text-decoration:underline;
 }
 .blog-heading
 {
 	padding-bottom:5px;
-	font-weight:bold;
+	font-weight:normal;
 	font-size:24px;
 	color:#1e8ab7;
 }
 .blog-quote
 {
-	font-family:"Open Sans";
+	font-family:"Open Sans", sans serif;
 	
 }
 .blog-quickview
