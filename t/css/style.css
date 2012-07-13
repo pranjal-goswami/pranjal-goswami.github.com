@@ -1,0 +1,143 @@
+@charset "utf-8";
+/* CSS Document */
+
+body
+{
+	
+	font-family:'kulturista-web',serif;
+	font-weight:normal;
+	width:100%;
+	margin:auto;
+	display:block;
+	//unselectable
+	/*
+	-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+*/
+}
+
+#wrapper
+{
+	margin:auto;
+
+}
+#top_pad
+{
+	height:40px;
+	width:100%;
+}
+#home_banner{
+	background-image:url(../assets/images/home_banner1.png);
+	height:268px;
+	width:750px;
+	border:6px solid #f7f7f7;
+	border-radius:15px;
+	-moz-box-shadow:2px 2px 3px #AAAAAA;
+	-webkit-box-shadow:2px 2px 3px #AAAAAA;
+	box-shadow:2px 2px 3px #AAAAAA;
+	
+}
+#pic
+{
+	background-image:url(../assets/images/pranjal.jpg);
+	height:143px;
+	width:143px;
+	
+	border:2px solid #f7f7f7;
+	
+	-moz-box-shadow:0px 2px 3px #AAAAAA;
+	-webkit-box-shadow:0px 2px 3px #AAAAAA;
+	box-shadow:0px 2px 3px #AAAAAA;
+}
+#name
+{
+	color:#3a87ad;
+	font-weight:normal;
+}
+p
+{
+font-size:14px;
+}
+#navigation_list li{
+	font-size:20px;
+	height:30px;
+	color:#7ea232;
+}
+#navigation_list li a{
+	text-decoration:none;
+	color:#7ea232;
+	}
+	
+#navigation_list li a:hover
+{
+	color:#436005;	
+}
+#content
+{
+	padding-left:5px;
+}
+.heading
+{
+	//color:#7d7d7d;
+	//font-size:20px;
+	font-weight:400;
+	//text-decoration:underline;
+}
+.blog-heading
+{
+	padding-bottom:5px;
+	font-weight:normal;
+	font-size:24px;
+	color:#1e8ab7;
+}
+.blog-quote
+{
+	font-family:"Open Sans", sans serif;
+	
+}
+.blog-quickview
+{
+	border-bottom:1px solid #ccc;
+	padding-bottom:10px;
+	padding-top:10px;
+}
+#cf { position:relative;
+height:33px;
+width:33px;
+	
+}
+#cf img {
+	position:absolute;
+	-webkit-transition: opacity 0.5s ease-in-out;
+	-moz-transition: opacity 0.5s ease-in-out;
+	-o-transition: opacity 0.5s ease-in-out;
+	transition: opacity 0.5s ease-in-out;
+	
+	
+	-moz-box-shadow:0px 2px 3px #f5f5f5;
+	-webkit-box-shadow:0px 2px 3px #f5f5f5;
+	box-shadow:0px 2px 3px #f5f5f5;
+}
+
+#cf img.topimage:hover {
+	opacity:0;
+}
+
+#contact
+{
+	padding-top:10px;
+	border-top:1px solid #ccc;
+	margin-top:20px;
+}
+
+#footer
+{
+	color:#ccc;
+	font-family:'Open Sans';
+	float:right;
+	padding:10px;
+}
