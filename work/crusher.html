@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.css" />
+<link rel="stylesheet" href="../bootstrap/css/bootstrap-responsive.css" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
+<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Telex' >
+<link rel="stylesheet" href="../css/style.css" />
+<link rel="stylesheet" href="../css/prettify.css" />
+<script type="text/javascript" src="../assets/scripts/prettify.js"></script>
+<title>pranjalgoswami.in | Pranjal Goswami</title>
+
+</head>
+<body onload="prettyPrint();">
+<div id="wrapper">
+<div id="top_pad"></div>
+
+<div class="span3 offset1" style="">
+    <div id="pic"></div>
+    
+    <br />
+    <h2 id="name">Pranjal Goswami</h2><br />
+    <p>student, programmer, sitarist, design enthusiast, entrepreneur</p>
+    <br /><br /><br />
+    
+    <ul class="unstyled" id="navigation_list">
+    <li><a href="../">home</a></li>
+    <li><a href="">work</a></li>
+    <li><a href="#">resume</a></li>
+    </ul>
+    
+    <div id="contact">
+    <p style="font-family:'Open Sans'"><a href="mailto:pranjal.b.goswami@gmail.com">pranjal.b.goswami@gmail.com</a></p>
+    <ul class="unstyled social_icons">
+    <li style="float:left; padding:5px;"><a href="https://twitter.com/pranjal_goswami" target="_blank"><div id="cf"><img class="bottom" src="../assets/images/twitter_icon.png" /> <img class="topimage" src="../assets/images/twitter_icon1.png" /></div></a></li>
+    <li style="float:left; padding:5px;"><a href="https://www.facebook.com/pranjal.b.goswami" target="_blank"><div id="cf"><img class="bottom" src="../assets/images/fb_icon.png" /> <img class="topimage" src="../assets/images/fb_icon1.png" /></div></a></li>
+    <li style="float:left; padding:5px;"><a href="http://www.linkedin.com/in/goswamipranjal" target="_blank"><div id="cf"><img class="bottom" src="../assets/images/linkedin_icon.png" /> <img class="topimage" src="../assets/images/linkedin_icon1.png" /></div></a></li>
+    
+    </ul>
+    </div>
+</div>
+
+<div class="span8" style="">
+	
+    <div id="content">
+    <br />
+	<h2 class="heading">Assignment Report</h2>  <br /><br />
+    <div class="blog-heading">Recirculation Load of Primary Crusher</div>
+    <br /><br />
+    <div class="blog-body">
+    
+    Recirculation Load is defined as the ratio of the amount of recirculation from crusher to the amount of feed.
+    The feed is constant <em>(for ex. 100 tons/hr)</em>.
+    <br /><br />
+    In computing the Recirculating load, the new feed in every iteration is the sum of constant feed and recirculation.
+    The output of the primary crusher is passed through a filtering screen that segregates the over-sized and under-sized particles.
+    The over-sized particles are recirculated back to the feed. 
+    <br />
+    <br />
+    <img src="../assets/images/recirculation_formula.png" class="blog-body-image thumbnail" />
+    <br />
+    <br />
+	<img src="../assets/images/crusher_recirculation.jpg" class="blog-body-image thumbnail" />
+    <center><span class="image-title">Figure. Crusher Circuit Flow Diagram</span></center>
+  <br /><br />
+    Following is a script in C to iterate the flow and calculate the recirculation load in each iteration.
+    <br /><br />
+    
+<pre class="prettyprint linenums:1 pre-scrollable" ><xmp>/*
+:: Simulator for Crusher Circulation ::
+Pranjal Goswami
+10CH10030
+*/
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+#include<time.h>
+
+#define SCREEN_RATIO_PIVOT 60 
+#define RANGE 1 /* <delta> x in percentage*/
+
+double getRatio(); // returns SCREEN_RATIO_PIVOT +/- RANGE %
+
+void main()
+{
+  int rom; // Run of mines - input in inches
+  int feed; // Feed Rate - input in units per hour to primary crusher
+  double screen_ratio; // Screen Oversize : Undersize Ratio - pivots about SCREEN_RATIO_PIVOT <delta>x < RANGE;
+  int i;
+  int new_feed;
+  int recirculation;
+  double recirculation_load;
+  double avg_recirculation_load;
+ 
+  srand(time(NULL)); // Randomizing seed
+  //scanf("%d",&feed);
+  feed=100;  
+  new_feed=feed;
+  
+  for(i=0;i<50;i++)
+  {
+    screen_ratio = getRatio();
+    recirculation = (int)new_feed*screen_ratio;
+    recirculation_load = (double) recirculation/feed*100;
+    printf("%d %d %d %d %.2lf\n",i,new_feed,recirculation,new_feed-recirculation,recirculation_load);
+    new_feed = feed + recirculation;
+    
+  }
+  
+}
+
+double getRatio()
+{
+   double c;
+   int sign;
+   c=(double)rand()/RAND_MAX;
+   c=c*RANGE;
+   sign = (int)c%2?1:-1;
+   c=SCREEN_RATIO_PIVOT+c*sign;
+   return c/100.0;
+  
+}
+</xmp></pre>
+
+    </div>
+    
+    
+    </div>
+    
+
+   
+      
+    </div>
+    <div id="footer">&copy; Pranjal Goswami 2012 | Site Design : BADesigns</div>
+</div>
+</div>
+</body>
+</html>

@@ -117,12 +117,16 @@ font-size:14px;
 .blog-body
 {
 	text-align:justify;
+	font-family:"Open Sans", sans serif;
+	font-size:15px;
+	line-height:20px;
 }
 
 .blog-body-image
 {
 	max-height:350px;
 	margin:auto;
+	
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
@@ -131,6 +135,11 @@ font-size:14px;
 	user-select: none;
 	cursor:not-allowed;
 	
+}
+.image-title
+{
+	font-size:12px;
+	color:#999;
 }
 
 #cf { position:relative;
