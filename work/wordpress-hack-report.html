@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.css" />
+<link rel="stylesheet" href="../bootstrap/css/bootstrap-responsive.css" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
+<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Telex' >
+<link rel="stylesheet" href="../css/style.css" />
+<link rel="stylesheet" href="../css/prettify.css" />
+<script type="text/javascript" src="../assets/scripts/prettify.js"></script>
+<title>pranjalgoswami.in | Pranjal Goswami</title>
+
+</head>
+<body onload="prettyPrint();">
+<div id="wrapper">
+<div id="top_pad"></div>
+
+<div class="span3 offset1" style="">
+    <div id="pic"></div>
+    
+    <br />
+    <h2 id="name">Pranjal Goswami</h2><br />
+    <p>student, programmer, sitarist, design enthusiast, entrepreneur</p>
+    <br /><br /><br />
+    
+    <ul class="unstyled" id="navigation_list">
+    <li><a href="../">home</a></li>
+    <li><a href="">work</a></li>
+    <li><a href="#">resume</a></li>
+    </ul>
+    
+    <div id="contact">
+    <p style="font-family:'Open Sans'"><a href="mailto:pranjal.b.goswami@gmail.com">pranjal.b.goswami@gmail.com</a></p>
+    <ul class="unstyled social_icons">
+    <li style="float:left; padding:5px;"><a href="https://twitter.com/pranjal_goswami" target="_blank"><div id="cf"><img class="bottom" src="../assets/images/twitter_icon.png" /> <img class="topimage" src="../assets/images/twitter_icon1.png" /></div></a></li>
+    <li style="float:left; padding:5px;"><a href="https://www.facebook.com/pranjal.b.goswami" target="_blank"><div id="cf"><img class="bottom" src="../assets/images/fb_icon.png" /> <img class="topimage" src="../assets/images/fb_icon1.png" /></div></a></li>
+    <li style="float:left; padding:5px;"><a href="http://www.linkedin.com/in/goswamipranjal" target="_blank"><div id="cf"><img class="bottom" src="../assets/images/linkedin_icon.png" /> <img class="topimage" src="../assets/images/linkedin_icon1.png" /></div></a></li>
+    
+    </ul>
+    </div>
+</div>
+
+<div class="span8" style="">
+	
+    <div id="content">
+    <br />
+	<h2 class="heading">[Solved] Wordpress Hack</h2>  <br /><br />
+    <div class="blog-heading">Cross-Domain Script hack</div>
+    <br /><br />
+    <div class="blog-body">
+   	<h3> Problem :</h3> <br />
+    <img src="../assets/images/blog-problem.png" class="blog-body-image thumbnail" />
+     <center><small style="font-size:12px">The wordpress variables replaced with malicious text</small></center>
+     <p>
+     <h3 style="text-decoration:underline">Possible causes:</h3>
+     <br />
+     <ul>
+     	<li><strong>Hack in posts</strong>        </li>
+        <p> Scan the posts in the database. Go to phpMyAdmin and run the following SQL commands for wp_[user#]_contents.
+        <br /><br />
+        <pre class="prettyprint linenums"><xmp>SQL > SELECT * FROM wp_[user#]_contents WHERE post_content like '<script'
+SQL > SELECT * FROM wp_[user#]_contents WHERE post_content like '<iframe'
+SQL > SELECT * FROM wp_[user#]_contents WHERE post_content like '<noscript'</xmp></pre></p>
+
+	<li><strong> Malicious .htaccess</strong></li>
+    <p> Check contents of the .htaccess file. Match with a sample .htaccess if something looks suspicious.
+    
+    <li><strong>Look</strong></li>
+    <p>Look where the malware is being injected using web console tools.</p>
+    <br />
+    <img src="../assets/images/wp_blog1.png" class="blog-body-image thumbnail" />
+    <br />
+    <li><strong> Malicious scripts</strong></li>
+    <p> Check contents of all the index.php files.
+    </p>
+    <img src="../assets/images/wp_blog2.png" class="blog-body-image thumbnail" />
+
+    
+    <li><strong>After:</strong></li><p>If the suspicious code is found, delete all redundancies of the code. Upgrade to a stable wordpress version. Change all the passwords including the database passwords.</p>
+     </ul>
+    
+     </p>
+    </div>
+    </div>
+    </div>
+
+    <div id="footer">&copy; Pranjal Goswami 2012 | Site Design : BADesigns</div>
+</div>
+</div>
+</body>
+</html>
