@@ -8,6 +8,9 @@
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
 <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Telex' >
 <link rel="stylesheet" href="../css/style.css" />
+<script src="http://code.jquery.com/jquery-latest.pack.js"></script>
+<script src="../assets/scripts/url.js"></script>
+<script src="../assets/scripts/ajax_pageload.js"></script>
 <title>pranjalgoswami.in | Pranjal Goswami</title>
 
 </head>
@@ -43,28 +46,49 @@
 <div class="span8" style="">
 	
     <div id="content">
-    <br />
-	<h2 class="heading">Portfolio</h2>  <br /><br />
+    <br /><span class="pull-right"><a href="./"><small>&laquo; back</small></a></span>
+	<h2 class="heading">Journal</h2>  <br /><br />
+    
  
   <!-- One -->  
-    <h3 class="blog-heading"></h3>
-    <br />
-    
-    <div class="blog-body">
-    
-    <br /><br />
+    <center>
+<div id="page-spinner" class="ajax-loader"><br /><br />Loading<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></div>
+</center>
+    <div id="post"></div>
+    <div id="posts">
+ 
+    </div>
     <!--End -->
      
     <br />
       
     </div>
-    
-
    
       
     </div>
+    <!--<span class="btn" onclick="loadFileToElement('posts.xml','posts'); $('#page-spinner').fadeOut();">this</span>-->
     <div id="footer">&copy; Pranjal Goswami 2012 | Site Design : BADesigns</div>
+    <br /><br />
 </div>
 </div>
+
+<script>
+$(document).ready(function(){
+	//alert('<t>'+processURL()+'</t>');
+	if(processURL()=="")
+	{
+		loadFileToElement('posts.xml','posts',1);
+		
+	}
+	else
+	{
+		var url = processURL();
+		ajaxpage('test.html','post');
+		
+	}
+	$('#page-spinner').fadeOut();
+	
+});
+</script>
 </body>
 </html>

@@ -188,3 +188,14 @@ p.light-text
 	font-weight:lighter;
 	font-size:16px;
 }
+
+.ajax-loader
+{
+	width:60px;
+	
+	position:absolute;
+	background:white url('../assets/images/ajax-loader.gif');
+	height:50px;
+	background-repeat:no-repeat;
+	margin:auto;
+}

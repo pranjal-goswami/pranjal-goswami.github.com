@@ -8,6 +8,9 @@
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
 <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Telex' >
 <link rel="stylesheet" href="css/style.css" />
+<script src="http://code.jquery.com/jquery-latest.pack.js"></script>
+<script src="assets/scripts/url.js"></script>
+<script src="assets/scripts/ajax_pageload.js"></script>
 <title>pranjalgoswami.in | Pranjal Goswami</title>
 </head>
 <body>
@@ -45,24 +48,21 @@
     <div id="content">
     <br />
 	<h2 class="heading">Journal</h2>  
-
-    <div class="blog-quickview">
-    	<h3 class="blog-heading"><a href="./post/bootstrap.html">Reasons that make Twitter Bootstrap a favourite tool </a></h3>
-        <small>2012, September 1</small>
-        <br /><br />
-        <p class="blog-quote">In august last year Twitter launched twitter bootstrap which is a free collection of tools for creating websites and web applications. It brings a plethora of opportunities to do awesome stuff on the web without focusing on the design. Bootstrap is a boon...</p>
-    </div>
+    <div id="page-spinner" class="ajax-loader"><br /><br />Loading<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></div>
+	   <div class="" id="output"></div>
     
-    <div class="blog-quickview">
-    	<h3 class="blog-heading"><a href="#">Music is what your feelings sound like</a></h3>
-        <small>2012, August 25</small>
-        <br /><br />
-        <p class="blog-quote">This is the text that is given in a special field in jekyll such that this is a quoted text of the blog and this has to appear beautiful. There are no other ways I can make something explicitly for google chrome</p>
-    </div>
     
     </div>
+ 
+   
     <div id="footer">&copy; Pranjal Goswami 2012 | Site Design : BADesigns</div>
 </div>
 </div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		loadFileToElement('post/posts.xml','output',0);
+		$('#page-spinner').fadeOut();
+	});
+</script>
 </body>
 </html>
