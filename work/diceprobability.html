@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.css" />
+<link rel="stylesheet" href="../bootstrap/css/bootstrap-responsive.css" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
+<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Telex' >
+<link rel="stylesheet" href="../css/style.css" />
+<link rel="stylesheet" href="../css/prettify.css" />
+<script type="text/javascript" src="../assets/scripts/prettify.js"></script>
+<title>pranjalgoswami.in | Pranjal Goswami</title>
+
+</head>
+<body onload="prettyPrint();">
+<div id="wrapper">
+<div id="top_pad"></div>
+
+<div class="span3 offset1" style="">
+    <div id="pic"></div>
+    
+    <br />
+    <h2 id="name">Pranjal Goswami</h2><br />
+    <p>student, programmer, sitarist, design enthusiast, entrepreneur</p>
+    <br /><br /><br />
+    
+    <ul class="unstyled" id="navigation_list">
+    <li><a href="../">home</a></li>
+    <li><a href="">work</a></li>
+    <li><a href="#">resume</a></li>
+    </ul>
+    
+    <div id="contact">
+    <p style="font-family:'Open Sans'"><a href="mailto:pranjal.b.goswami@gmail.com">pranjal.b.goswami@gmail.com</a></p>
+    <ul class="unstyled social_icons">
+    <li style="float:left; padding:5px;"><a href="https://twitter.com/pranjal_goswami" target="_blank"><div id="cf"><img class="bottom" src="../assets/images/twitter_icon.png" /> <img class="topimage" src="../assets/images/twitter_icon1.png" /></div></a></li>
+    <li style="float:left; padding:5px;"><a href="https://www.facebook.com/pranjal.b.goswami" target="_blank"><div id="cf"><img class="bottom" src="../assets/images/fb_icon.png" /> <img class="topimage" src="../assets/images/fb_icon1.png" /></div></a></li>
+    <li style="float:left; padding:5px;"><a href="http://www.linkedin.com/in/goswamipranjal" target="_blank"><div id="cf"><img class="bottom" src="../assets/images/linkedin_icon.png" /> <img class="topimage" src="../assets/images/linkedin_icon1.png" /></div></a></li>
+    
+    </ul>
+    </div>
+</div>
+
+<div class="span8" style="">
+	
+    <div id="content">
+    <br />
+	<h2 class="heading">Assignment Report</h2>  <br /><br />
+    <div class="blog-heading">Probability Distribution for Rolling n dice</div>
+    <br /><br />
+    <div class="blog-body">
+    Python Script to imply the probability distribution for outcome of rolling <em><strong>n</strong></em> dice.
+    <br /><br />
+    
+<style>
+pre.prettyprint li{
+	line-height:10px;
+}
+</style>
+<pre class="prettyprint linenums:1" ><xmp>
+#probability distribution of rolling n dice
+import random
+N =1000
+
+no_of_dice = 100;
+def rollDice():
+  #function to return random number between 1 and 6 (integers) inclusive
+  x = random.random()
+  d = 0
+  if 0 <= x < 0.166:
+    d = 1
+  elif 0.166 <= x < 0.33:
+    d = 2
+  elif 0.33 <= x < 0.5:
+    d = 3
+  elif 0.5 <= x < 0.666:
+    d = 4
+  elif 0.666 <= x < 0.83:
+    d = 5
+  else:
+    d = 6
+  return d
+  
+def generateProbability():
+  a=[]
+  i=0
+  for i in range(0,6*no_of_dice):
+    a.append(0)
+
+  i=0
+  for i in range(0,N):
+    j=0
+    outcome=0
+    for j in range(0,no_of_dice):
+      outcome+=rollDice()
+    a[int(outcome)-1]+=1
+
+  print 'Number of trials : ', N
+  #print a
+
+  i=0
+  for i in range(no_of_dice-1,len(a)):
+    #print (i+1),'-',a[i]
+    print a[i]
+
+N=100000
+while N <= 100000:
+  generateProbability()
+  N*=10
+
+</xmp></pre>
+<a href="diceprobability.py" class="btn btn-success" target="_blank"><i class="icon-download-alt icon-white" ></i>&nbsp; Download File (.py)</a>
+<br /><br />
+<p>The experiments were done for rolling 2 dice varying the number of trials from 1,000 to 1,00,00,000</p>
+<h3>Output</h3>
+<br />
+<img src="../assets/images/probgraph1.png" class="blog-body-image thumbnail" />
+   <center><span class="image-title">Figure. Graph : <strong<Probability</strong> versus <strong>Outcome</strong></span></center>
+    <br />
+   
+
+<br />
+<TABLE class=" table table-condensed table-bordered table-striped">
+<thead>
+	<th>Outcome</th>
+    <th>N=1000</th>
+    <th>N=10000</th>
+    <th>N=100000</th>
+    <th>N=100000</th>
+    <th>N=1000000</th>
+</thead>
+ <tr>
+  <td>2</td>
+  <td>2.30%</td>
+  <td>2.46%</td>
+  <td>2.79%</td>
+  <td>2.72%</td>
+  <td>2.75%</td>
+ </tr>
+ <tr>
+  <td>3</td>
+  <td>6.80%</td>
+  <td>5.64%</td>
+  <td>5.46%</td>
+  <td>5.45%</td>
+  <td>5.44%</td>
+ </tr>
+ <tr>
+  <td>4</td>
+  <td>7.20%</td>
+  <td>8.52%</td>
+  <td>8.35%</td>
+  <td>8.35%</td>
+  <td>8.34%</td>
+ </tr>
+ <tr>
+  <td>5</td>
+  <td>11.80%</td>
+  <td>10.90%</td>
+  <td>11.06%</td>
+  <td>11.12%</td>
+  <td>11.06%</td>
+ </tr>
+ <tr>
+  <td>6</td>
+  <td>14.40%</td>
+  <td>13.81%</td>
+  <td>13.88%</td>
+  <td>13.76%</td>
+  <td>13.79%</td>
+ </tr>
+ <tr>
+  <td>7</td>
+  <td>16.40%</td>
+  <td>16.75%</td>
+  <td>16.74%</td>
+  <td>16.65%</td>
+  <td>16.67%</td>
+ </tr>
+ <tr>
+  <td>8</td>
+  <td>13.90%</td>
+  <td>13.93%</td>
+  <td>13.90%</td>
+  <td>13.93%</td>
+  <td>13.92%</td>
+ </tr>
+ <tr>
+  <td>9</td>
+  <td>10.60%</td>
+  <td>11.23%</td>
+  <td>11.21%</td>
+  <td>11.23%</td>
+  <td>11.22%</td>
+ </tr>
+ <tr>
+  <td>10</td>
+  <td>9.00%</td>
+  <td>8.11%</td>
+  <td>8.31%</td>
+  <td>8.30%</td>
+  <td>8.34%</td>
+ </tr>
+ <tr>
+  <td>11</td>
+  <td>4.70%</td>
+  <td>5.68%</td>
+  <td>5.42%</td>
+  <td>5.60%</td>
+  <td>5.58%</td>
+ </tr>
+ <tr>
+  <td>12</td>
+  <td>2.90%</td>
+  <td>2.97%</td>
+  <td>2.88%</td>
+  <td>2.89%</td>
+  <td>2.89%</td>
+ </tr>
+
+</TABLE>
+ 
+    <br />
+	<img src="../assets/images/probgraph2.png" style="width:100%" class="blog-body-image thumbnail" />
+    <center><span class="image-title">Figure. Graph : <strong>Probability</strong> versus <strong>Outcome</strong></span></center>
+    </div>
+    </div>
+    </div>
+
+    <div id="footer">&copy; Pranjal Goswami 2012 | Site Design : BADesigns</div>
+</div>
+</div>
+</body>
+</html>
