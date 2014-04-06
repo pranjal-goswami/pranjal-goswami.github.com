@@ -48,6 +48,7 @@ function loadFileToElement(filename,elementId,level)
 		output = ' <div class="blog-quickview">'+output+ ' </div><br/>';
 		
 		
+		
 	});
 	
 	$('#'+elementId).html(output);

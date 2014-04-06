@@ -199,3 +199,16 @@ p.light-text
 	background-repeat:no-repeat;
 	margin:auto;
 }
+.social_icons{
+	margin-top:-15px;
+}
+.social_icons li
+{
+	float:left;
+	display:block;
+	padding:10px;
+}
+.social_icons li a:hover
+{
+	opacity:0.6;
+}
