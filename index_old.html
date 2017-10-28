@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="fragment" content="!">
+
+
+    <meta name="keywords" content="Pranjal Goswami, Pranjal, Goswami, Blog, journal, BADesigns, design, sitar, music, web development, programming, programmer" />
+
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Telex' >
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/font-awesome.css" />
+    <script src="http://code.jquery.com/jquery-latest.pack.js"></script>
+    <script src="assets/scripts/url.js"></script>
+    <script src="assets/scripts/ajax_pageload.js"></script>
+    <title>pranjalgoswami.in | Pranjal Goswami</title>
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-35311830-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+</head>
+<body>
+<div id="wrapper">
+    <div id="top_pad"></div>
+
+    <div class="container">
+        <div class="row-fluid">
+
+            <div class="span3 offset1" style="">
+                <div id="pic"></div>
+
+                <br />
+                <h2 id="name">Pranjal Goswami</h2><br />
+                <p>student, programmer, sitarist, design enthusiast, entrepreneur</p>
+                <br /><br /><br />
+
+                <ul class="unstyled" id="navigation_list">
+                    <li><a href="#">home</a></li>
+                    <li><a href="work/">work</a></li>
+                    <li><a href="./cv.pdf" target="_blank">resume</a></li>
+                </ul>
+
+                <div id="contact">
+                    <p style="font-family:'Open Sans'"><a href="mailto:pranjal.b.goswami@gmail.com">pranjal.b.goswami@gmail.com</a></p>
+                    <hr />
+                    <ul class="unstyled social_icons">
+                        <li><a href="https://www.facebook.com/pranjal.b.goswami" target="_blank" style="color:#204385">
+                            <i class="fa fa-facebook fa-2x"></i> </a></li>
+                        <li><a href="https://twitter.com/pranjal_goswami" target="_blank" style="color:#2aa9e0">
+                            <i class="fa fa-twitter fa-2x"></i> </a></li>
+                        <li><a href="http://in.linkedin.com/in/goswamipranjal" target="_blank" style="color:#02669a">
+                            <i class="fa fa-linkedin fa-2x"></i> </a></li>
+                        <li><a href="https://github.com/pranjal-goswami?tab=repositories" target="_blank" style="color:#222">
+                            <i class="fa fa-github fa-2x"></i> </a></li>
+                        <li><a href="http://stackoverflow.com/users/1279286/pranjal" target="_blank" style="color:#f19f29">
+                            <i class="fa fa-stack-overflow fa-2x"></i> </a></li>
+                        <!--
+                        <li style="float:left; padding:5px;"><a href="https://twitter.com/pranjal_goswami" target="_blank"><div id="cf"><img class="bottom" src="assets/images/twitter_icon.png" /> <img class="topimage" src="assets/images/twitter_icon1.png" /></div></a></li>
+                        <li style="float:left; padding:5px;"><a href="https://www.facebook.com/pranjal.b.goswami" target="_blank"><div id="cf"><img class="bottom" src="assets/images/fb_icon.png" /> <img class="topimage" src="assets/images/fb_icon1.png" /></div></a></li>
+                        <li style="float:left; padding:5px;"><a href="http://www.linkedin.com/in/goswamipranjal" target="_blank"><div id="cf"><img class="bottom" src="assets/images/linkedin_icon.png" /> <img class="topimage" src="assets/images/linkedin_icon1.png" /></div></a></li>
+                        -->
+
+                    </ul>
+                    <br /><br /><br /><br />
+                </div>
+            </div>
+
+            <div class="span8 " style="">
+                <div id="home_banner"></div>
+                <small style="font-size:9px; color:#CCC; float:right;"><a href="http://www.fuelyourcreativity.com/left-brain-vs-right-brain-advertising/" style="color:#ccc;">image : Mercedes Benz Ad Campaign</a></small>
+                <div id="content">
+                    <br />
+                    <h2 class="heading">Journal</h2>
+                    <div id="page-spinner" class="ajax-loader"><br /><br />Loading<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></div>
+                    <div class="" id="output"></div>
+
+
+                </div>
+
+
+                <div id="footer">&copy; Pranjal Goswami 2012 | Site Design : BADesigns</div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        loadFileToElement('post/posts.xml','output',0);
+        $('#page-spinner').fadeOut();
+    });
+</script>
+</body>
+</html>
